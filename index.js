@@ -19,6 +19,9 @@ app.use(express.json())
 app.use(cookieParser())
 logger.info("Server starting on port 8000");
 logger.error("DB connection failed");
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
 app.use("/api/auth",authRouter)
 app.use("/api/profile",profileRouter)
 app.use("/api/tasks",taskRouter)
